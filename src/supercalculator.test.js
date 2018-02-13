@@ -10,7 +10,7 @@ jest.mock('./calculator', () => {
 const calculator = require('./calculator');
 const superCalculator = require('./supercalculator');
 
-test('difference', () => {
+test('basic difference calculations', () => {
   calculator.subtract.mockReturnValueOnce(2);
   expect(superCalculator.difference(1, -1)).toBe(2);
 
@@ -23,4 +23,9 @@ test('difference', () => {
   expect(calls[0][1]).toBe(-1);
   expect(calls[1][0]).toBe(-1);
   expect(calls[1][1]).toBe(1);
+});
+
+test('advanced difference calculations', () => {
+  // TODO: Test input als undefined, Inifity en null.
+  // TODO: Doe dat op een generieke manier.
 });
