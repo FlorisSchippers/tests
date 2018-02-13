@@ -6,11 +6,17 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test:unit": "jest"
+    "test": "yarn test:unit && yarn test:e2e",
+    "test:unit": "jest",
+    "test:e2e": "testcafe puppeteer tests/web-calculator.js",
+    "test:e2e:all": "testcafe chrome,firefox,safari tests/web-calculator.js",
+    "test:e2e:remote": "testcafe remote:3 tests/web-calculator.js --qr-code"
   },
   "devDependencies": {
     "jest": "^22.2.2",
-    "nodemon": "^1.14.12"
+    "nodemon": "^1.14.12",
+    "testcafe": "^0.18.6",
+    "testcafe-browser-provider-puppeteer": "^1.3.0"
   },
   "dependencies": {
     "express": "^4.16.2"

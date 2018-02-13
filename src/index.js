@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'web')));
 
 app.get('/add', (req, res) => {
-  const result = calculator.add(req.query.a, req.query.b);
+  const result = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
   res.json({ result });
 });
 
@@ -22,4 +22,4 @@ app.get('/diff', (req, res) => {
   res.json({ result });
 });
 
-app.listen(3000);
+module.exports = app.listen(3000);
