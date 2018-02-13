@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'web')));
 
 app.get('/add', (req, res) => {
-  const result = calculator.add(parseInt(req.query.a), parseInt(req.query.b));
+  const result = calculator.add(parseInt(req.query.a, 10), parseInt(req.query.b, 10));
   res.json({ result });
 });
 

@@ -1,0 +1,23 @@
+extends:
+  airbnb-base
+
+env:
+  browser: true
+  node: true
+  jest: true
+
+rules:
+
+  # This doesn't have the best OOP-programming. So we turn this off.
+  class-methods-use-this: off
+
+  # These functions make Javascript look complicated for developers that don't know ES6. So we turn these off.
+  prefer-template: off
+  prefer-destructuring:
+    - error
+    - VariableDeclarator:
+        array: false
+        object: false
+      AssignmentExpression:
+        array: false
+        object: false

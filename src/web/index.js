@@ -10,14 +10,17 @@ function onButtonClick(event) {
 }
 
 // Bind the function to all buttons.
-document.querySelectorAll('button').forEach(button => {
+document.querySelectorAll('button').forEach((button) => {
   button.addEventListener('click', onButtonClick);
 });
 
 // What happens when you click the calculate button.
 async function onCalculateClick() {
   const sumParts = resultInput.value.split('+');
-  if (sumParts.length !== 2) return resultInput.value = 'FOUT!';
+  if (sumParts.length !== 2) {
+    resultInput.value = 'FOUT!';
+    return;
+  }
 
   submitButton.disabled = true;
 

@@ -9,22 +9,19 @@ test('that it checks for bad input', () => {
 
   try {
     calculator.add('1', 2);
-  }
-  catch (err) {
+  } catch (err) {
     expect(err.message).toBe('You can\'t add strings.');
   }
 
   try {
     calculator.add(1, '2');
-  }
-  catch (err) {
+  } catch (err) {
     expect(err.message).toBe('You can\'t add strings.');
   }
 
   try {
     calculator.add('1', '2');
-  }
-  catch (err) {
+  } catch (err) {
     expect(err.message).toBe('You can\'t add strings.');
   }
 });

@@ -6,13 +6,17 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "yarn test:unit && yarn test:e2e",
+    "test": "yarn test:lint && yarn test:unit && yarn test:e2e",
+    "test:lint": "eslint src tests",
     "test:unit": "jest",
     "test:e2e": "testcafe puppeteer tests/web-calculator.js",
     "test:e2e:all": "testcafe chrome,firefox,safari tests/web-calculator.js",
     "test:e2e:remote": "testcafe remote:3 tests/web-calculator.js --qr-code"
   },
   "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
     "jest": "^22.2.2",
     "nodemon": "^1.14.12",
     "testcafe": "^0.18.6",
