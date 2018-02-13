@@ -9,10 +9,6 @@ class Calculator {
     return a - b;
   }
 
-  difference (a, b) {
-    Number.abs(this.subtract(a, b));
-  }
-
 }
 
 module.exports = new Calculator();

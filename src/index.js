@@ -1,4 +1,5 @@
 const calculator = require('./calculator');
+const superCalculator = require('./supercalculator');
 const express = require('express');
 const path = require('path');
 
@@ -17,7 +18,7 @@ app.get('/sub', (req, res) => {
 });
 
 app.get('/diff', (req, res) => {
-  const result = calculator.difference(req.query.a, req.query.b);
+  const result = superCalculator.difference(req.query.a, req.query.b);
   res.json({ result });
 });
 
