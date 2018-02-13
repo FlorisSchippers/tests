@@ -6,4 +6,4 @@ class SuperCalculator {
   }
 }
 
-export default new SuperCalculator();
+module.exports = new SuperCalculator();
