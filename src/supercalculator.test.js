@@ -1,0 +1,26 @@
+jest.mock('./calculator', () => {
+  class MockCalculator {
+    constructor() {
+      this.subtract = jest.fn();
+    }
+  }
+  return new MockCalculator();
+});
+
+const calculator = require('./calculator');
+const superCalculator = require('./supercalculator');
+
+test('difference', () => {
+  calculator.subtract.mockReturnValueOnce(2);
+  expect(superCalculator.difference(1, -1)).toBe(2);
+
+  calculator.subtract.mockReturnValueOnce(-2);
+  expect(superCalculator.difference(-1, 1)).toBe(2);
+
+  const calls = calculator.subtract.mock.calls;
+  expect(calls.length).toBe(2);
+  expect(calls[0][0]).toBe(1);
+  expect(calls[0][1]).toBe(-1);
+  expect(calls[1][0]).toBe(-1);
+  expect(calls[1][1]).toBe(1);
+});

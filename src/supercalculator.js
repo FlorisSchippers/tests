@@ -2,7 +2,7 @@ const calculator = require('./calculator');
 
 class SuperCalculator {
   difference (a, b) {
-    Number.abs(calculator.subtract(a, b));
+    return Math.abs(calculator.subtract(a, b));
   }
 }
 

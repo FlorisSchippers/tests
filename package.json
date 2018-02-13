@@ -3,5 +3,16 @@
   "version": "0.0.0",
   "main": "src/index.js",
   "author": "Bart Langelaan <langelaanbart@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test:unit": "jest"
+  },
+  "devDependencies": {
+    "jest": "^22.2.2",
+    "nodemon": "^1.14.12"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
