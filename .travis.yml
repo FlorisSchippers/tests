@@ -1,5 +1,17 @@
+# We're running Node.js!
 language: node_js
 node_js: node
 
+# This is to make Chrome (Puppeteer) work.
+sudo: required
+addons:
+  chrome: stable
+
+# Don't spam me if something doesn't work!
 notifications:
   email: false
+
+# Run the server before we start testing.
+before_script:
+  - yarn start & # End with a &, so the next command won't wait for the server to stop.
+  - sleep 10 # Give the server some time to startup.
