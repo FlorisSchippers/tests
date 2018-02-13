@@ -1,0 +1,7 @@
+{
+  "name": "testing",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "author": "Bart Langelaan <langelaanbart@gmail.com>",
+  "license": "MIT"
+}
